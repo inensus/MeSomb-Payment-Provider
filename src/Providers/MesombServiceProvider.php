@@ -37,8 +37,6 @@ class MesombServiceProvider extends ServiceProvider
         $this->app->register(EventServiceProvider::class);
         $this->app->register(ObserverServiceProvider::class);
         $this->app->singleton('MesombPaymentProvider', MesombTransactionProvider::class);
-        $router = $this->app['router'];
-        $router->pushMiddlewareToGroup('web', MesombTransactionRequest::class);
     }
 
     public function publishConfigFiles()
